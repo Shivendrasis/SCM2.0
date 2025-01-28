@@ -78,20 +78,20 @@ SCM 2.0 is an advanced Java-based application designed to efficiently manage con
 
 ## 📸 Screenshots
 
-### Login Page
-![Login Page](screenshots/login.png)
+### Home Page
+![Login Page](screenshot/screen1.png)
+
+### Sidebar
+![Dashboard](screenshots/screen3.png)
+
+### Navbar
+![Add Contact](screenshots/screen2.png)
 
 ### Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Contact List](screenshots/screen14.png)
 
-### Add Contact
-![Add Contact](screenshots/add_contact.png)
-
-### Contact List
-![Contact List](screenshots/contact_list.png)
-
-### Profile Management
-![Profile Management](screenshots/profile_management.png)
+### Sweetalert
+![Profile Management](screenshots/screen15.png)
 
 ---
 
