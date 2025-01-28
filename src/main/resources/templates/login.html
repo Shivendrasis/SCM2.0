@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{fragments :: parent(~{::#content},~{:: title})}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+</head>
+
+<body>
+
+    <div id="content" class="pt-20 ">
+
+        <div
+            class="w-full mx-auto max-w-lg bg-white  border-t-4 border-blue-900  rounded-lg shadow sm:p-6 md:p-8 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-650 dark:border-gray-400">
+
+            <!------------------message notification---------------------->
+            <div th:replace="~{message :: messagebox}"></div>
+
+            <h5 class="mb-2 text-center text-sm font-medium text-gray-900 dark:text-white py-4 sm:py-6">
+                Login in to our platform</h5>
+
+
+            <!--------------------------Messages---------------------------->
+            <div class="text-red-600 text-center " th:if="${param.error}">
+                Invalid username and password.</div>
+            <div class="text-green-600 text-center" data-th-if="${param.logout}">
+                You have been logged out.</div>
+
+            <!-----------------------Forms  summit------------------------->
+            <form method="post" class="mt-5" data-th-action="@{'/authenticate'}">
+
+
+
+
+                <!----------------username----------------->
+                <div class=" mb-3 px-4 sm:px-6">
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        Email</label>
+
+                    <input name="email" type="email" id="email"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="scm20@gmail.com" required />
+
+
+                    <!--<p 
+                        data-th-if="${#fields.hasErrors('email')}"
+                        data-th-errors="*{email}"
+                        class="text-red-700 px-0.5  py-0.5  text-sm" >
+                       </p>-->
+                </div>
+
+
+                <!-----------------password---------------->
+                <div class="mb-3 px-4 sm:px-6">
+                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        Password
+                    </label>
+
+                    <input name="password" type="password" id="password"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Enter your password" required />
+                </div>
+
+
+
+
+
+
+
+                <!------------------Button----------------->
+                <div class="mb-3 flex justify-center space-x-3">
+
+                    <button type="submit"
+                        class="px-3 py-2 rounded bg-gray-800 text-white dark:bg-blue-800 dark:hover:bg-blue-600 ">
+                        Login</button>
+
+                    <button type="reset"
+                        class="px-3 py-2 rounded bg-red-600 text-white dark:bg-blue-800 dark:hover:bg-blue-600 ">
+                        Reset</button>
+
+                </div>
+
+
+            </form>
+
+            <div class="social-button-container flex justify-center mt-10  py-4 sm:py-6">
+                <a class=" py-2 login-with-google-btn" data-th-href="@{'/oauth2/authorization/google'}">
+                    Login With Google
+                </a>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+</body>
+
+</html>

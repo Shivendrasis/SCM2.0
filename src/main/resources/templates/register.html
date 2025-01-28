@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{fragments :: parent(~{::#content},~{:: title})}">
+
+<head>
+    <title>Signup</title>
+</head>
+
+<body>
+
+
+    <div id="content" class="pt-20">
+
+        <div
+            class="w-full mx-auto max-w-lg bg-white  border-t-4  px-4 sm:px-6 mb-3 py-4 sm:py-6 border-blue-900  rounded-lg shadow sm:p-6 md:p-8 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-650 dark:border-gray-400">
+
+            <!------------------message notification---------------------->
+            <div th:replace="~{message :: messagebox}"></div>
+
+            <h5 class="mb-2 text-center text-sm font-medium text-gray-900 dark:text-white">Sign in to our platform</h5>
+
+            <!-----------------------Forms  summit------------------------->
+            <form data-th-action="@{'/do-register'}" method="post" data-th-object="${userForm}" class="space-y-1 mt-1"
+                novalidate>
+
+
+                <!---------------- Name----------------->
+                <div class="mb-3">
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        Name</label>
+
+                    <input type="text" id="name" th:field="*{name}"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Enter your name" required />
+
+
+                    <p data-th-if="${#fields.hasErrors('name')}" data-th-errors="*{name}"
+                        class="text-red-700 px-0.5  py-0.5  text-sm">
+                        Username is required</p>
+                </div>
+
+                <!----------------Email----------------->
+                <div class="mb-3">
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        Email</label>
+
+                    <input type="email" id="email" th:field="*{email}"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="scm20@gmail.com" required />
+
+
+                    <p data-th-if="${#fields.hasErrors('email')}" data-th-errors="*{email}"
+                        class="text-red-700 px-0.5  py-0.5  text-sm">
+                    </p>
+                </div>
+
+
+                <!-----------------password---------------->
+                <div class="mb-3">
+                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        Password</label>
+
+                    <input type="password" id="password" th:field="*{password}"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="" required />
+
+
+                    <p data-th-if="${#fields.hasErrors('password')}" data-th-errors="*{password}"
+                        class="text-red-700 px-0.5  py-0.5  text-sm">
+                    </p>
+                </div>
+
+
+
+                <!-----------------Phone---------------->
+                <div class="mb-3">
+                    <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        Contact Number</label>
+
+                    <input type="text" id="phone" th:field="*{phoneNumber}"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="" required />
+
+
+                    <p data-th-if="${#fields.hasErrors('phoneNumber')}" data-th-errors="*{phoneNumber}"
+                        class="text-red-700 px-0.5  py-0.5  text-sm">
+                    </p>
+                </div>
+
+                <!-----------------About---------------->
+                <div class="mb-3">
+
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        Your message</label>
+                    <textarea id="message" rows="4" th:field="*{about}"
+                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Write your thoughts here..."></textarea>
+
+
+                    <p data-th-if="${#fields.hasErrors('about')}" data-th-errors="*{about}"
+                        class="text-red-700 px-0.5  py-0.5  text-sm">
+                    </p>
+
+                </div>
+
+
+                <!------------------Button----------------->
+                <div class="mb-3 flex justify-center space-x-3">
+
+                    <button type="submit"
+                        class="px-3 py-2 rounded bg-gray-800 text-white dark:bg-blue-800 dark:hover:bg-blue-600 ">
+                        Signup</button>
+
+                    <button type="reset"
+                        class="px-3 py-2 rounded bg-red-600 text-white dark:bg-blue-800 dark:hover:bg-blue-600 ">
+                        Reset</button>
+
+                </div>
+
+
+            </form>
+        </div>
+
+
+
+
+    </div>
+
+</body>
+
+</html>

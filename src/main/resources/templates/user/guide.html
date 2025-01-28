@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{fragments :: parent(~{::#content},~{:: title})}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-th-text="${loggedInUser.name} + ' | Dashboard'">About SCM 2.0</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <div id="content" class="sm:pl-64">
+
+    <!-- Sidebar (if user is logged in) -->
+    <div data-th-if="${loggedInUser}">
+      <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="ml-0 sm:ml-64 pt-20 flex justify-center flex-wrap px-4 py-4 sm:py-6">
+
+      <!-- Empty Spacer for Alignment -->
+      <div class="hidden sm:block w-20"></div>
+
+      <!-- About SCM Section -->
+      <div
+        class="bg-white  w-full sm:w-3/4 lg:w-1/2 text-black dark:text-white dark:bg-gray-600 text-center flex flex-col p-5 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-extrabold text-blue-700 dark:text-blue-300 mb-6">
+          SCM 2.0 [Smart Contact Manager]
+        </h2>
+
+        <!-- Details Section -->
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">About SCM</h3>
+          <p class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+            SCM 2.0 helps you manage and organize your contacts</p>
+          <p class="text-sm text-gray-700 dark:text-gray-200">efficiently with advanced features like search,</p>
+          <p class="text-sm text-gray-700 dark:text-gray-200">grouping, and secure storage.</p>
+
+
+          <div class="mt-4">
+            <h4 class="text-md font-bold text-gray-900 dark:text-gray-100">Version Info</h4>
+            <p class="text-sm text-gray-700 dark:text-gray-200">Version: 2.0.1</p>
+          </div>
+
+          <div class="mt-4">
+            <h4 class="text-md font-bold text-gray-900 dark:text-gray-100">Developer Info</h4>
+            <p class="text-sm text-gray-700 dark:text-gray-200">
+              Shivendra Sisodia<br>
+              <a href="https://github.com/shivendrasis" target="_blank"
+                class="text-blue-500 hover:underline">GitHub</a><br>
+              <a href="mailto:sisodiashivendra66@gmail.com" class="text-blue-500 hover:underline">Email</a>
+            </p>
+          </div>
+
+          <div class="mt-4">
+            <h4 class="text-md font-bold text-gray-900 dark:text-gray-100">Changelog</h4>
+            <ul class=" pl-5 text-sm text-gray-700 dark:text-gray-200">
+              <li>Added dark mode</li>
+              <li>Export to PDF functionality</li>
+            </ul>
+          </div>
+
+          <div class="mt-4 mb-5">
+            <h4 class="text-md font-bold text-gray-900 dark:text-gray-100">License</h4>
+            <p class="text-sm text-gray-700 dark:text-gray-200">Free for personal use</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

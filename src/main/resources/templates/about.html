@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{fragments :: parent(~{::#content},~{:: title})}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About page</title>
+</head>
+
+<body>
+
+
+    <div id="content" class="ml-64 pt-16 text-center ">
+
+
+
+        <!-- Features Section -->
+
+        <section class="py-20 bg-gray-100 ">
+
+            <div class="container mx-auto text-center ">
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-4 dark:bg-gray-900">
+
+                    <div
+                        class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                        <i class="fas fa-address-book text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Smart Contact Management</h3>
+                        <p class="text-gray-500  dark:text-gray-200">Add, edit, and organize your contacts in a
+                            user-friendly interface.</p>
+                    </div>
+
+                    <div
+                        class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                        <i class="fas fa-lock text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Secure Storage</h3>
+                        <p class="text-gray-500  dark:text-gray-200">Your data is protected with top-level encryption
+                            and security measures.</p>
+                    </div>
+
+                    <div
+                        class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                        <i class="fas fa-globe text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">24/7 Access</h3>
+                        <p class="text-gray-500  dark:text-gray-200">Access your contacts anytime, anywhere from any
+                            device.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Testimonials Section -->
+
+        <h2 class="text-3xl font-bold mb-16 p-6 dark:bg-gray-900 dark:text-white">Testimonials</h2>
+
+
+
+        <div class="flex justify-center gap-4 flex-col sm:flex-row dark:bg-gray-900 pb-5">
+
+
+            <div
+                class="max-w-sm  bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Alex Carry</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Contact Manager has changed the way I
+                        organize my contacts. It's
+                        fast, secure, and incredibly easy to use!</p>
+                    <a href="#"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+
+
+            <div
+                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Stifen jobs
+                        </h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">A fantastic app with great features! I
+                        love the 24/7 access and
+                        secure storage options.</p>
+                    <a href="#"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

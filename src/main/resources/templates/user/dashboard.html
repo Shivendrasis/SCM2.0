@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{fragments :: parent(~{::#content},~{:: title})}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-th-text="${loggedInUser.name}+ ' | Dashboard'">Dashboard page</title>
+</head>
+
+<body>
+
+  <div id="content" class="sm:pl-64">
+
+    <!--id user logged in : sidebar-->
+    <div data-th-if="${loggedInUser}">
+
+      <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+    </div>
+
+    <div class="ml-64 pt-16">
+
+
+
+      <!-- Banner Section -->
+      <section
+        class="w-full text-center bg-blue-600 border rounded-lg shadow-sm sm:p-8 dark:bg-gray-900 dark:border-gray-900">
+        <div class="w-full h-auto pt-10 bg-blue-600 dark:bg-gray-900 dark:border-gray-900">
+          <!-- Image Section -->
+          <div class="flex justify-center items-center mb-4">
+            <img src="/imges/customer-service.png" alt="Contact Book" class="w-24 h-24 md:w-32 md:h-32 object-contain">
+          </div>
+          <h5 class="mb-2 text-3xl font-bold text-white dark:text-white">
+            Welcome to Contact Manager
+          </h5>
+          <p class="mb-5 text-base text-gray-200 sm:text-lg dark:text-gray-400">
+            Manage all your contacts effortlessly and securely in one place.
+          </p>
+        </div>
+      </section>
+      <div class="h-10"></div>
+
+      <!----Sign up button---->
+
+      <div
+        class="w-full p-4 pt-5 text-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <!-- Responsive Heading -->
+        <h5 class="mb-2 text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+          Ready to manage your contacts?
+        </h5>
+
+        <!-- Responsive Paragraph -->
+        <p class="mb-5 text-sm sm:text-base lg:text-lg text-gray-500 dark:text-gray-400">
+          Sign up today and experience the easiest way to manage your contacts.
+        </p>
+
+        <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
+          <a data-th-href="@{'/user/contacts/add'}"
+            class=" sm:w-auto bg-blue-500 hover:bg-gray-300 text-black dark:text-gray-800 rounded-full inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-100 dark:hover:bg-gray-200">
+            <div class="text-left rtl:text-right flex items-center space-x-2 rtl:space-x-reverse">
+              <!-- Register Icon -->
+              <i class="fa-solid fa-user-plus"></i>
+
+              <!-- Register Text -->
+              <span class="font-sans text-sm font-semibold">Add more contact</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+
+
+
+
+</body>
+
+</html>

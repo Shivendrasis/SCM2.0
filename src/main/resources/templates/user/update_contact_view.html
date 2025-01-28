@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{fragments :: parent(~{::#content},~{:: title})}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update your contact</title>
+</head>
+
+<body>
+
+    <div id="content" class="sm:pl-64">
+
+        <!--id user logged in : sidebar-->
+        <div data-th-if="${loggedInUser}">
+
+            <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+        </div>
+
+        <div class="ml-64 pt-16   text-center">
+
+
+            <div class="w-full mx-auto max-w-xl bg-white  border-t-4  border-blue-900  
+            rounded-lg shadow sm:p-6 md:p-8 hover:bg-gray-100 dark:bg-gray-700 
+            dark:hover:bg-gray-650 dark:border-gray-400">
+
+                <div data-th-replace="~{message::messagebox}"></div>
+
+                <h1 class="text-2xl font-semibold ">Update Contact Here</h1>
+
+
+                <!----add contact form --->
+                <form class="mt-8" data-th-action="@{'/user/contacts/update/' + ${contactId}}"
+                    data-th-object="${contactForm}" method="post" enctype="multipart/form-data">
+
+
+                    <!-----name------>
+                    <div class="mb-3">
+                        <label for="input-group-1"
+                            class="block mb-2 text-sm font-medium text-left text-gray-900 dark:text-white">
+                            Name</label>
+                        <div class="relative mb-1">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                                <i class="fa-solid w-4 h-4 fa-user"></i>
+                            </div>
+                            <input data-th-field="*{name}" type="text" id="input-group-1"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="name">
+
+                        </div>
+                        <!-----------Validation----------->
+                        <p class="text-red-700 text-sm text-left" data-th-if="${#fields.hasErrors('name')}"
+                            data-th-errors="*{name}">Invalid name </p>
+
+                    </div>
+
+                    <!-----email------>
+                    <div class="mb-3">
+                        <label for="input-group-1"
+                            class="block mb-2 text-sm font-medium text-left text-gray-900 dark:text-white">
+                            Email</label>
+                        <div class="relative mb-1">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                                <i class="fa-solid w-4 h-4 fa-envelope"></i>
+                            </div>
+                            <input type="text" data-th-field="*{email}"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="name@gmail.com">
+                        </div>
+                        <!-----------Validation----------->
+                        <p class="text-red-700 text-sm text-left" data-th-if="${#fields.hasErrors('email')}"
+                            data-th-errors="*{email}">Invalid email </p>
+                    </div>
+
+
+                    <!-----phone------>
+                    <div class="mb-3">
+                        <label for="input-group-1"
+                            class="block mb-2 text-sm font-medium text-left text-gray-900 dark:text-white">
+                            Contact Phone</label>
+                        <div class="relative mb-1">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                                <i class="fa-solid w-4 h-4 fa-phone"></i>
+                            </div>
+                            <input type="text" data-th-field="*{phoneNumber}"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="">
+                        </div>
+                        <!-----------Validation----------->
+                        <p class="text-red-700 text-sm text-left" data-th-if="${#fields.hasErrors('phoneNumber')}"
+                            data-th-errors="*{phoneNumber}">Invalid phoneNumber </p>
+                    </div>
+
+
+                    <!-----address------>
+                    <div class="mb-3">
+                        <label for="input-group-1"
+                            class="block mb-2 text-sm font-medium text-left text-gray-900 dark:text-white">
+                            Address</label>
+                        <div class="relative mb-1">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                                <i class="fa-solid w-4 h-4 fa-house"></i>
+                            </div>
+                            <input type="text" data-th-field="*{address}"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="IMT Maneser sector D 605 Delhi">
+                        </div>
+                        <!-----------Validation----------->
+                        <p class="text-red-700 text-sm text-left" data-th-if="${#fields.hasErrors('address')}"
+                            data-th-errors="*{address}">Invalid name </p>
+                    </div>
+
+
+                    <!-----description------>
+                    <div class="mb-3">
+                        <label for="input-group-1"
+                            class="block mb-2 text-sm font-medium text-left text-gray-900 dark:text-white">
+                            Description</label>
+                        <div class="relative mb-4">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                                <i class="fa-solid w-4 h-4 fa-clipboard"></i>
+                            </div>
+                            <input type="text" data-th-field="*{description}"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Write thought here">
+                        </div>
+                    </div>
+
+
+                    <!----social links ---->
+                    <div class="flex space-x-3 mb-3">
+
+                        <div class="w-full">
+                            <!-----website link------>
+                            <div class="mb-3">
+                                <label for="input-group-1"
+                                    class="block mb-2 text-sm font-medium text-left text-gray-900 dark:text-white">
+                                </label>
+                                <div class="relative mb-4">
+                                    <div
+                                        class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                                        <i class="fa-solid w-4 h-4 fa-earth-americas"></i>
+                                    </div>
+                                    <input data-th-field="*{websiteLink}"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="http://shivendrasisodia.com">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-----linkdin link------>
+                        <div class="w-full">
+
+                            <div class="mb-3">
+                                <label for="input-group-1"
+                                    class="block mb-2 text-sm font-medium text-left text-gray-900 dark:text-white">
+                                </label>
+                                <div class="relative mb-4">
+                                    <div
+                                        class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                                        <i class="fa-brands w-4 h-4 fa-linkedin"></i>
+                                    </div>
+                                    <input data-th-field="*{linkedInLink}"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="http://linkdIn.com">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!----contact image---->
+                    <div class=" mb-3">
+
+                        <label class="block mb-2 text-sm text-left font-medium text-gray-900 dark:text-white"
+                            for="file_input">Contact image</label>
+                        <input
+                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            data-th-field="*{contactImage}" type="file">
+
+                    </div>
+
+                    <!-----favorite Checkbox---->
+                    <div class="flex items-center mb-4">
+                        <input type="checkbox" data-th-field="*{favorite}"
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                            Add this contact to your favorite list ?</label>
+                    </div>
+
+                    <div class="button_container text-center space-x-3 mt-8">
+
+                        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 
+                            font-medium rounded-lg text-sm w-full sm:w-auto px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700
+                             dark:focus:ring-blue-800">
+                            Update</button>
+
+                        <button type="reset" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 
+                            font-medium rounded-lg text-sm w-full sm:w-auto px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700
+                             dark:focus:ring-blue-800">
+                            Reset</button>
+
+
+                    </div>
+            </div>
+
+
+            </form>
+
+        </div>
+
+
+    </div>
+
+    </div>
+
+
+</body>
+
+</html>

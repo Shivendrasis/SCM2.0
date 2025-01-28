@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{fragments :: parent(~{::#content},~{:: title})}">
+<head>
+  <title>Home page</title>
+  <link rel="icon" type="image/x-icon" href="/telephone-call.png">
+</head>
+
+<body>
+  <div id="content" class="pt-20">
+
+
+
+    <!-- Banner Section -->
+    <section
+      class="w-full text-center bg-blue-600 border rounded-lg shadow-sm sm:p-8 dark:bg-gray-900 dark:border-gray-900">
+      <div class="w-full h-auto pt-10 bg-blue-600 dark:bg-gray-900 dark:border-gray-900">
+        <!-- Image Section -->
+        <div class="flex justify-center items-center mb-4">
+          <img src="/imges/customer-service.png" alt="Contact Book" class="w-24 h-24 md:w-32 md:h-32 object-contain">
+        </div>
+        <h5 class="mb-2 text-3xl font-bold text-white dark:text-white">
+          Welcome to Contact Manager
+        </h5>
+        <p class="mb-5 text-base text-gray-200 sm:text-lg dark:text-gray-400">
+          Manage all your contacts effortlessly and securely in one place.
+        </p>
+      </div>
+    </section>
+    <div class="h-10"></div>
+
+    <!----Sign up button---->
+
+    <div
+      class="w-full p-4 pt-5 text-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+      <!-- Responsive Heading -->
+      <h5 class="mb-2 text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+        Ready to manage your contacts?
+      </h5>
+
+      <!-- Responsive Paragraph -->
+      <p class="mb-5 text-sm sm:text-base lg:text-lg text-gray-500 dark:text-gray-400">
+        Sign up today and experience the easiest way to manage your contacts.
+      </p>
+
+      <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
+        <a href="/register"
+          class=" sm:w-auto bg-blue-600 hover:bg-blue-900 text-black dark:text-gray-800 rounded-full inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-100 dark:hover:bg-gray-200">
+          <div class="text-left rtl:text-right flex items-center space-x-2 rtl:space-x-reverse">
+            <!-- Register Icon -->
+            <i class="fa-solid fa-user-plus"></i>
+
+            <!-- Register Text -->
+            <span class="font-sans text-sm text-white font-semibold">Create User Account</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+
+    <!-- Features Section -->
+
+    <section class="py-20 rounded-lg bg-gray-100 ">
+
+      <div class="container mx-auto text-center ">
+
+        <h2 class="text-3xl font-bold mb-16 p-6 dark:bg-gray-900 dark:text-white">Features</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-4 dark:bg-gray-900">
+
+          <div
+            class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <i class="fas fa-address-book text-blue-600 text-4xl mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Smart Contact Management</h3>
+            <p class="text-gray-500  dark:text-gray-200">Add, edit, and organize your contacts in a user-friendly
+              interface.</p>
+          </div>
+
+          <div
+            class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <i class="fas fa-lock text-blue-600 text-4xl mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Secure Storage</h3>
+            <p class="text-gray-500  dark:text-gray-200">Your data is protected with top-level encryption and security
+              measures.</p>
+          </div>
+
+          <div
+            class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <i class="fas fa-globe text-blue-600 text-4xl mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">24/7 Access</h3>
+            <p class="text-gray-500  dark:text-gray-200">Access your contacts anytime, anywhere from any device.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="h-5"></div>
+
+
+    <!-- Testimonials Section -->
+
+    <!-- Contact Section -->
+    <section class="py-20 rounded-lg dark:bg-gray-900 animate__animated animate__fadeInUp">
+      <div class="container mx-auto pt-5">
+
+        <div class="text-center justify-center">
+          <h5 id="drawer-label"
+            class="inline-flex items-center text-center mb-6 text-base font-semibold text-gray-600 uppercase dark:text-gray-300">
+            <svg class="w-4 h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+              viewBox="0 0 20 16">
+              <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+              <path
+                d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+            </svg>Contact us</h5>
+        </div>
+
+        <form class="py-4 sm:py-6 px-4 sm:px-6">
+          <div class=" w-1/4">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+            <input type="email" id="email"
+              class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="name@company.com" required />
+          </div>
+          <div class="mb-6">
+            <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Subject</label>
+            <input type="text" id="subject"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Let us know how we can help you" required />
+          </div>
+          <div class="mb-6">
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+              message</label>
+            <textarea id="message" rows="4"
+              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Your message..."></textarea>
+          </div>
+          <button type="submit"
+            class="text-white bg-blue-700 hover:bg-blue-800 w-full focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 block">Send
+            message</button>
+        </form>
+
+        <footer class=" text-black dark:text-white py-6">
+          <div class="container mx-auto text-center">
+            <p class="text-sm  px-6">&copy; 2025 Contact Manager. All rights reserved.</p>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+
+
+</body>
+
+</html>
