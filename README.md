@@ -23,26 +23,17 @@ SCM 2.0 is an advanced Java-based application designed to efficiently manage con
 - **Backend:** Java 17, Spring Boot 3, Hibernate ORM
 - **Database:** MySQL
 - **Security:** Spring Security (with BCrypt password encoding)
-- **Build Tool:** Maven
-- **IDE:** IntelliJ IDEA, Eclipse
-- **Version Control:** Git, GitHub
-
+- **Build Tool:** Maven, Spring Initializer, IntelliJ IDEA
+- 
 ---
 
 ## 🚀 Getting Started
-
-### Prerequisites
-
-- Java Development Kit (JDK 17 or higher)
-- Maven (latest version)
-- MySQL Database
-- Git
 
 ### Installation
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Shivendra-Digital/SCM2.0-Smart-Contact-Manager.git
+   git clone https://github.com/Shivendrasis/SCM2.0-Smart-Contact-Manager.git
    ```
 
 2. **Navigate to the project directory:**
@@ -55,23 +46,12 @@ SCM 2.0 is an advanced Java-based application designed to efficiently manage con
    mvn clean install
    ```
 
-4. **Set up the database:**
-   - Create a database named `scm2` in MySQL.
-   - Update `application.properties` with your database credentials:
-     ```properties
-     spring.datasource.url=jdbc:mysql://localhost:3306/scm2
-     spring.datasource.username=your_username
-     spring.datasource.password=your_password
-     spring.jpa.hibernate.ddl-auto=update
-     spring.jpa.show-sql=true
-     ```
-
-5. **Run the application:**
+4. **Run the application:**
    ```bash
    mvn spring-boot:run
    ```
 
-6. **Access the application:**
+5. **Access the application:**
    Open your browser and go to: [http://localhost:8080](http://localhost:8080)
 
 ---
@@ -88,39 +68,10 @@ SCM 2.0 is an advanced Java-based application designed to efficiently manage con
 ![Add Contact](src/main/resources/static/screenshots/screen2.jpg)
 
 ### Dashboard
-![Contact List](src/main/resources/static/screenshots/Screenshot(14).png)
+![Contact List](src/main/resources/static/screenshots/Screenshot5.png)
 
 ### Sweetalert
-![Profile Management](src/main/resources/static/screenshots/Screenshot(15).png)
-
----
-
-## 📂 Project Structure
-
-```
-SCM2.0-Smart-Contact-Manager
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com.example.scm
-│   │   │       ├── controllers
-│   │   │       ├── entities
-│   │   │       ├── repositories
-│   │   │       ├── services
-│   │   ├── resources
-│   │       ├── templates
-│   │       │   ├── login.html
-│   │       │   ├── dashboard.html
-│   │       │   ├── add_contact.html
-│   │       │   ├── contact_list.html
-│   │       │   └── profile.html
-│   │       ├── static
-│   │           ├── css
-│   │           └── js
-│   └── test
-├── pom.xml
-└── README.md
-```
+![Profile Management](src/main/resources/static/screenshots/Screenshot6.png)
 
 ---
 
@@ -149,9 +100,3 @@ For any questions or feedback, feel free to reach out:
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
-
-## 🔗 Links
-
-- **Project Repository:** [SCM 2.0 GitHub](https://github.com/Shivendra-Digital/SCM2.0-Smart-Contact-Manager)
-- **Documentation:** Coming Soon
